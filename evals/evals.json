@@ -1,0 +1,23 @@
+{
+  "skill_name": "pipeline-doc-generator",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "我们刚刚完成了 Narrative Slice Stage 的重构，添加了 audio_notes 字段处理，并且优化了与上游 Parse Stage 的数据契约。请为这次变更写一份 Pipeline 架构演进文档。",
+      "expected_output": "A complete Pipeline architecture evolution document with all 13 sections, including Before/After comparisons for the audio_notes field addition and data contract changes between Parse and Narrative Slice stages.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "最近我们引入了新的 Batch Analyze Scenes Stage，它可以并行分析多个场景以提高性能。这个变更影响了 Storyboard Generation Stage。需要记录这次架构演进。",
+      "expected_output": "A Pipeline architecture evolution document documenting the new Batch Analyze Scenes Stage, its parallel processing capabilities, and the impact on downstream Storyboard Generation Stage.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "写一份架构文档，记录我们 Pipeline 从 v2.2 到 v2.4 的演进历程，重点关注数据流的变化和跨 Stage 契约的调整。",
+      "expected_output": "A comprehensive Pipeline evolution document covering v2.2 to v2.4, with emphasis on dataflow evolution and cross-stage contract changes, including all 13 sections.",
+      "files": []
+    }
+  ]
+}
