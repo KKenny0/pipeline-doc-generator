@@ -420,3 +420,23 @@ v2.3 → v2.4: narrative_timeline now includes audio_notes
 3. Ensure all problems are verifiable
 4. Confirm trade-offs include both gains and costs
 5. Make sure references point to correct locations
+
+### Step 5: Export Change Summary
+
+After completing and verifying the document, export a change summary entry so downstream tools (like weekly report generators) know this architecture evolution was documented.
+
+Read `references/weekly-ppt-convention.md` for the full schema and storage rules. Generate a single entry:
+
+- **type**: `"decision"` (pipeline architecture evolution is inherently a decision)
+- **summary**: 1 sentence — what evolved (version, scope, which stages)
+- **context**: 1-2 sentences — what stages are impacted and the strategic intent
+- **related_docs**: path to the generated `pipeline-evolution-v{version}.md`
+- **source**: `"pipeline-doc"`
+
+Append the entry to `~/.weekly-ppt/weeks/{current-ISO-week}/{project-slug}.json`.
+
+If the project slug cannot be determined (no `~/.weekly-ppt/projects.json`, no clear project context), skip this step silently. The documentation is the primary deliverable; the change summary is a side effect.
+
+## Shared Storage Convention
+
+This skill participates in the weekly-ppt shared storage system alongside `stage-doc-generator` and `weekly-change-tracker`. The full schema and storage rules are defined in `references/weekly-ppt-convention.md`.
